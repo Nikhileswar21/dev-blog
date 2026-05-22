@@ -1,0 +1,17 @@
+{
+  "name": "devblog",
+  "version": "1.0.0",
+  "description": "A blogg application powered by nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Nikhil",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.2",
+    "nodemon": "^3.1.14"
+  }
+}
