@@ -1,6 +1,6 @@
 # Dev-Blog
 
-Foobar is a Python library for dealing with word pluralization.
+Dev-blog is an blog application powered by the nodeJS.
 
 ## Installation
 
