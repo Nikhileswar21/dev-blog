@@ -17,6 +17,7 @@ app.set('views', path.resolve('./views'));
 //middleware
 app.use(express.static(path.resolve('./public')));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : false}));
 
 
 
