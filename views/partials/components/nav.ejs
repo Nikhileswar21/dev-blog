@@ -20,3 +20,17 @@
     </div>
   </div>
 </nav>
+
+
+
+<% if(locals.message) {%>
+  <div class=" container alert alert-success my-3">
+    <%= message %>
+  </div>
+<% } %>
+
+<% if(locals.error) {%>
+  <div class="container alert alert-danger my-3">
+    <%= error %>
+  </div>
+<% } %>

@@ -1,11 +1,17 @@
-exports.renderHomepage = function(req, res){
+const renderHomepage = function(req, res){
     res.render('home');
 };
 
-exports.renderLogin = function(req, res){
+const renderLogin = function(req, res){
     res.render('login');
 };
 
-exports.renderSignup = function(req, res){
+const renderSignup = function(req, res){
     res.render('signup');
 };
+
+module.exports = {
+    renderHomepage,
+    renderLogin,
+    renderSignup
+}

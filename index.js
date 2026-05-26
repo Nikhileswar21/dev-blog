@@ -1,7 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const mongoose = require('mongoose');
+
 const app = express();
+
+//connect to the database  
+
+mongoose.connect('mongodb://localhost/devblog')
+.then(() => console.log("connected to the database"))
+.catch(err => console.log('error connecting to the database',err));
 
 // import the routes
 const userRoute = require('./routes/userRoute');
@@ -12,6 +20,8 @@ const staticRoute = require('./routes/staticRoute');
 //configurations
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./views'));
+
+
 
 
 //middleware
