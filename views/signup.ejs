@@ -4,18 +4,25 @@
     <%- include('./partials/css/bootstrap') %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Signup</title>
 </head>
 <body>
      <%- include('./partials/components/nav') %>
 
      <div class="container mt-5">
-        <h1 class="my-4">Login</h1>
-        <form method = "post" action="/user/login">
+        <h1 class="my-4">Create an Free Account</h1>
+        <form method = "post" action="/user/signup">
   <div class="mb-3 ">
+
+    <label for="exampleInputEmail1" class="form-label">Full name</label>
+    <input name="FullName" type="text" class="form-control" id="fullNameInput" aria-describedby="fullnameHelp">
+    </div>
+
+    <div class="mb-3 ">
 
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
     
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -24,9 +31,7 @@
   
   <button type="submit" class="btn btn-primary">Submit</button>
   <h5 class="my-2">OR</h5>
-  <a href="/signup">Create an account</a>
-
-  
+  <a href="/login">Already have an account? Login</a>
 </form>
      </div>
     

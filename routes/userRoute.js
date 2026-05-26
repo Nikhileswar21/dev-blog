@@ -9,7 +9,11 @@ router.get('/', function(req, res){
 router.post('/login', function(req, res){
     console.log(req.body);
     res.end('method : ok');
-})
+});
 
+router.post('/signup', function(req, res){
+    console.log(req.body);
+    res.end('method : ok');
+});
 
 module.exports = router;

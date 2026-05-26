@@ -5,3 +5,7 @@ exports.renderHomepage = function(req, res){
 exports.renderLogin = function(req, res){
     res.render('login');
 };
+
+exports.renderSignup = function(req, res){
+    res.render('signup');
+};
