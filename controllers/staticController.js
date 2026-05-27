@@ -3,6 +3,7 @@ const renderHomepage = function(req, res){
 };
 
 const renderLogin = function(req, res){
+    if(req.cookies['token']) return res.redirect('/');
     res.render('login');
 };
 

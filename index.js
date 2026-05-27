@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
@@ -28,7 +29,7 @@ app.set('views', path.resolve('./views'));
 app.use(express.static(path.resolve('./public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : false}));
-
+app.use(cookieParser());
 
 
 // register the routes 
