@@ -1,11 +1,22 @@
 const user = require('../models/user');
 
 
-exports.handleUserLogin = function(req, res){
-    return res.render('login');
+const handleUserLogin = async  function(req, res){
+    const {email, password} = req.body;
+    try{
+        if(!email || !password) throw new Error ('email and password required');
+        const userEmail = await user.findOne({email});
+        if(!userEmail) throw new Error('user with this mail doesnt exist');
+        if(userEmail.password !== password) throw new Error ('password invalid, please enter correct password');
+
+        return res.render('login', {message : 'login successful'});
+
+    }catch(error){
+        res.render('login', {error});
+    }
 };
 
-exports.handleUserSignup = async function(req, res){
+const handleUserSignup = async function(req, res){
     const {fullName, email, password} = req.body;
     try{
         if(!fullName) throw new Error('Full name required');
@@ -17,4 +28,9 @@ exports.handleUserSignup = async function(req, res){
     }catch(error){
         res.render('signup', {error});
     }
+};
+
+module.exports = {
+    handleUserLogin,
+    handleUserSignup
 };
