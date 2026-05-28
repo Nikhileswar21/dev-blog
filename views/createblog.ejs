@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/css/bootstrap') %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create blog</title>
+</head>
+<body>
+    <%- include('./partials/components/nav') %>
+   <div class="container my-5">
+    <div class="container">
+        <h1>Create an new Blog</h1>
+    </div>
+     <label for="title" class="form-label">Title</label>
+    <input name="title" 
+    type="text" 
+    class="form-control" 
+    id="title" 
+    aria-describedby="title">
+    <label for="content" class="form-label ">content</label>
+    <textarea name="content" 
+    class="form-control" 
+    id="content" 
+    aria-describedby="content"></textarea>
+    <button class="btn btn-primary my-3" style="background-color: #2e4a1e; border-color: green;">create blog</button>
+   </div>
+    
+    
+    <%- include('./partials/js/bootstrap') %>
+</body>
+</html>
