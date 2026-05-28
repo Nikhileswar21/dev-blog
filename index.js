@@ -16,6 +16,7 @@ mongoose.connect('mongodb://localhost/devblog')
 const userRoute = require('./routes/userRoute');
 const blogRoute = require('./routes/blogRoute');
 const staticRoute = require('./routes/staticRoute');
+const {checkForToken} = require('./middlewares/auth');
 
 
 //configurations
@@ -30,6 +31,7 @@ app.use(express.static(path.resolve('./public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(cookieParser());
+app.use(checkForToken);
 
 
 // register the routes 

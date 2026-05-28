@@ -1,14 +1,17 @@
 const renderHomepage = function(req, res){
-    res.render('home');
+    res.render('home', {
+        user : req.user,
+    });
 };
 
 const renderLogin = function(req, res){
-    if(req.cookies['token']) return res.redirect('/');
-    res.render('login');
+    if(req.user) return res.redirect('/');
+    return res.render('login');
 };
 
 const renderSignup = function(req, res){
-    res.render('signup');
+     if(req.user) return res.redirect('/');
+    return res.render('signup');
 };
 
 module.exports = {
