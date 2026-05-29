@@ -10,19 +10,16 @@ Use the package manager [npm](https://docs.npmjs.com/) to install requirements.
 npm install
 ```
 
-## Dependencies
-```bash
-npm install mongoose
-```
-```bash
-npm install ejs
-```
-```bash
-npm install nodemon
-```
-```bash
-npm install body-parser 
-```
+## Features
+User Registration & Login
+JWT-based Authentication
+Create Blog Posts
+Read Blogs from Other Users
+Protected Routes
+Dynamic Rendering using EJS
+Responsive and Clean UI
+Session Management using JWT
+CRUD Operations for Blogs
 
 ## Contributing
 
