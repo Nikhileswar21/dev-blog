@@ -1,28 +1,27 @@
 const express = require('express');
+const Blog = require('../models/blog');
+const {renderCreateBlog, createNewBlog} = require('../controllers/blogController');
 const multer = require('multer');
 
 const router = express.Router();
 
+
+//multer for file upload handling
 const storage = multer.diskStorage({
     destination : (req,file,cb) =>{
         cb(null, ('./public/uploads/'));
     },
     filename : (req,file,cb) => {
-    cb(null, file.originalname);
+    cb(null, `${req.user._id}-${Date.now()}-${file.originalname}`);
 }
 });
 
 const upload = multer({storage});
 
 
-router.get('/create', function(req, res){
-    res.render('createblog');
-});
+// blog routes
+router.get('/create', renderCreateBlog);
 
-router.post('/create', upload.single('coverImg'), function(req,res){
-    console.log(req.body);
-    console.log(req.file);
-    return res.render('createblog');
-})
+router.post('/create', upload.single('coverImg'), createNewBlog);
 
 module.exports = router;
