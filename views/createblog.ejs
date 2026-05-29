@@ -8,23 +8,33 @@
 </head>
 <body>
     <%- include('./partials/components/nav') %>
-   <div class="container my-5">
     <div class="container">
-        <h1>Create an new Blog</h1>
+         <div class="my-5">
+    <h1>Create a New Blog</h1>
+   </div>
+   <form method = "post" action="/user/create">
+    <div class="mb-3">
+       <label for="coverImg" class="form-label">cover image</label> 
+       <input name="coverImg" type="file">
     </div>
-     <label for="title" class="form-label">Title</label>
+    <div class="mb-3 ">
+
+    <label for="title" class="form-label">Title</label>
     <input name="title" 
     type="text" 
     class="form-control" 
     id="title" 
     aria-describedby="title">
-    <label for="content" class="form-label ">content</label>
-    <textarea name="content" 
-    class="form-control" 
-    id="content" 
-    aria-describedby="content"></textarea>
-    <button class="btn btn-primary my-3" style="background-color: #2e4a1e; border-color: green;">create blog</button>
-   </div>
+    </div>
+    <div class="mb-3">
+         <label for="content" class="form-label">Content</label>
+         <textarea name="content" class="form-control" id="content"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary " style="background-color: #2e4a1e;">Post Blog</button>
+   </form>
+    </div>
+  
+
     
     
     <%- include('./partials/js/bootstrap') %>
