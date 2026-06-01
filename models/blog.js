@@ -16,8 +16,9 @@ const blogSchema = new mongoose.Schema({
     coverImg:{
         type : String,
         required : false
-    }
-});
+    },
+    
+},{timestamps : true});
 
 
 const Blog = mongoose.model('Blog', blogSchema);

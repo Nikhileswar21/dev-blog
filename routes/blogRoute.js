@@ -7,6 +7,8 @@ const router = express.Router();
 
 
 //multer for file upload handling
+// gets the file from the user and stores it in the public/uploads folder
+
 const storage = multer.diskStorage({
     destination : (req,file,cb) =>{
         cb(null, ('./public/uploads/'));
@@ -15,7 +17,6 @@ const storage = multer.diskStorage({
     cb(null, `${req.user._id}-${Date.now()}-${file.originalname}`);
 }
 });
-
 const upload = multer({storage});
 
 
