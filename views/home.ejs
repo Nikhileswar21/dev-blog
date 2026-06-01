@@ -10,7 +10,17 @@
     <%- include('./partials/components/nav') %>
    
     <div class="container">
-        <h1> This is the home page</h1>
+        <div class="row mt-5">
+        <% blogs.forEach(blog => { %>
+         <div class="card mx-2 col" style="width: 18rem;">
+  <img src="/uploads/<%= blog.coverImg %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= blog.title.slice(0,60) %></h5>
+    <a href="/blogs/view<%= blog._id %>" class="btn btn-primary">view full blog</a>
+  </div>
+</div>
+        <% }) %>
+        </div>
     </div>
 
     <%- include('./partials/js/bootstrap') %>
